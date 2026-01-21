@@ -1,5 +1,6 @@
 import { Phone, MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import dehuLogo from '../../images/dehologo.png';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -19,11 +20,15 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">D</span>
+            <div className="w-19 h-16 rounded-lg flex items-center justify-center overflow-hidden">
+              <img 
+                src={dehuLogo}
+                alt="Dehu Pathology Lab Logo"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div>
-              <h1 className="text-xl md:text-2xl font-bold text-gray-800">Dehu Pathology Lab</h1>
+              <h1 className="text-xl md:text-3xl font-bold text-gray-800">Dehu Pathology Lab</h1>
               <div className="flex items-center gap-2 text-sm text-gray-600">
                 <Phone className="w-3 h-3" />
                 <span>9325251932</span>
