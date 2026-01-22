@@ -1,5 +1,5 @@
 import { MapPin, Phone, Mail, MessageCircle } from 'lucide-react';
-import labImage from '../../images/lab.png';
+// import labImage from '../../images/lab.png';
 
 export default function Contact() {
   const whatsappLink = "https://wa.me/919325251932?text=Hello,%20I%20have%20a%20question%20about%20your%20services";
@@ -14,14 +14,7 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Lab Building Image */}
-        <div className="max-w-4xl mx-auto mb-12 rounded-2xl overflow-hidden shadow-2xl">
-          <img 
-            src={labImage}
-            alt="Dehu Pathology Lab Building"
-            className="w-full h-69 object-cover"
-          />
-        </div>
+        
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Information */}
