@@ -20,7 +20,7 @@ export default function TestCard({ icon, name, description }: TestCardProps) {
         </div>
       </div>
       <p className="text-gray-600 text-sm mb-4 flex-1">{description}</p>
-      <a 
+      <a
         href={whatsappLink}
         target="_blank"
         rel="noopener noreferrer"

@@ -1,4 +1,6 @@
-import { Users, Sparkles, Clock, IndianRupee, ShieldCheck } from 'lucide-react';
+import { Users, Sparkles, Clock, IndianRupee, ShieldCheck, CheckCircle } from 'lucide-react';
+import pack1 from '../../images/pack1.png';
+import pack2 from '../../images/pack2.png';
 
 export default function WhyChooseUs() {
   const features = [
@@ -49,7 +51,7 @@ export default function WhyChooseUs() {
             <div key={index} className="group">
               <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
                 <div className="h-48 overflow-hidden">
-                  <img 
+                  <img
                     src={feature.image}
                     alt={feature.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
@@ -67,6 +69,66 @@ export default function WhyChooseUs() {
           ))}
         </div>
       </div>
-    </section>
+
+      {/* Health Packages Section */}
+      <div className="mt-20">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Health Packages</h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Comprehensive health checkup packages designed for your well-being
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Package 1 */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div className="relative h-64 overflow-hidden">
+              <img
+                src={pack1}
+                alt="Health Package 1"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full font-bold shadow-md">
+                ₹1400
+              </div>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Basic Health Package</h3>
+              <div className="flex items-center gap-2 text-green-600 font-semibold mb-4">
+                <CheckCircle className="w-5 h-5" />
+                <span>Best Value for Routine Checkups</span>
+              </div>
+              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg">
+                Book Now
+              </button>
+            </div>
+          </div>
+
+          {/* Package 2 */}
+          <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+            <div className="relative h-64 overflow-hidden">
+              <img
+                src={pack2}
+                alt="Health Package 2"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-1 rounded-full font-bold shadow-md">
+                ₹2500
+              </div>
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-3">Advanced Health Package</h3>
+              <div className="flex items-center gap-2 text-green-600 font-semibold mb-4">
+                <CheckCircle className="w-5 h-5" />
+                <span>Comprehensive Full Body Checkup</span>
+              </div>
+              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg">
+                Book Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section >
   );
 }
