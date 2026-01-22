@@ -1,6 +1,6 @@
 import { MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import dehuLogo from '../../images/dehologo1.png';
+// import dehuLogo from '../../images/dehologo1.png'; // Removed in favor of public folder reference
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
@@ -36,7 +36,7 @@ export default function Header() {
             <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
               <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
-                  src={dehuLogo}
+                  src="/dehologo1.png"
                   alt="Dehu Pathology Lab Logo"
                   className="w-full h-full object-contain"
                 />
