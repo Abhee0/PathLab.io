@@ -1,4 +1,4 @@
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import dehuLogo from '../../images/dehologo1.png';
 
