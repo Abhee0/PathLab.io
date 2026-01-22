@@ -1,4 +1,4 @@
-import { MessageCircle, X, Calendar, User } from 'lucide-react';
+import { MessageCircle, X, Calendar, User, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import dehuLogo from '../../images/dehologo1.png';
 import labLogo from '../../images/lablogo4.png';
@@ -8,6 +8,7 @@ export default function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     userName: '',
+    preferredDate: '',
     preferredTime: ''
   });
 
@@ -21,7 +22,7 @@ export default function Header() {
   }, []);
 
   // Handle Input Changes
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -36,6 +37,7 @@ export default function Header() {
     const subject = "General Booking Request";
     const body = `Hello, I would like to book a test.\n\n` +
       `Patient Name: ${formData.userName}\n` +
+      `Preferred Date: ${formData.preferredDate}\n` +
       `Preferred Time: ${formData.preferredTime}`;
 
     // --- CHANGE: Use Gmail specific URL instead of mailto: ---
@@ -46,7 +48,7 @@ export default function Header() {
 
     // Close modal and reset form
     setIsModalOpen(false);
-    setFormData({ userName: '', preferredTime: '' });
+    setFormData({ userName: '', preferredDate: '', preferredTime: '' });
   };
 
   return (
@@ -64,12 +66,10 @@ export default function Header() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <img
-                  src={labLogo}
-                  alt="Lab Logo"
-                  className="h-16 md:h- object-contain"
-                />
+              <div className="flex flex-col items-start justify-center">
+                <p className="text-red-600 font-bold text-sm md:text-lg" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif", fontSize: '2.8rem' }}>
+                  देहू पॅथॉलॉजी लॅबोरेटरी
+                </p>
               </div>
             </div>
 
@@ -130,20 +130,63 @@ export default function Header() {
               {/* Time Input */}
               <div>
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
-                  Preferred Date & Time
+                  Preferred Date
                 </label>
                 <div className="relative">
                   <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   <input
-                    type="text"
-                    name="preferredTime"
+                    type="date"
+                    name="preferredDate"
                     required
-                    placeholder="e.g. Tomorrow at 9:00 AM"
-                    value={formData.preferredTime}
+                    value={formData.preferredDate}
                     onChange={handleChange}
                     className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
                   />
                 </div>
+              </div>
+
+              {/* Time Slot Input */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+                  Preferred Time Slot
+                </label>
+                <div className="relative">
+                  <select
+                    name="preferredTime"
+                    required
+                    value={formData.preferredTime}
+                    onChange={handleChange}
+                    className="w-full pl-4 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm appearance-none"
+                  >
+                    <option value="">Select a time slot</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="9:30 AM">9:30 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="10:30 AM">10:30 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="11:30 AM">11:30 AM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="2:30 PM">2:30 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="3:30 PM">3:30 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="4:30 PM">4:30 PM</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Phone Contact */}
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
+                  Call Us
+                </label>
+                <a
+                  href="tel:9325251932"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span>9325251932</span>
+                </a>
               </div>
 
               {/* Submit Button */}
