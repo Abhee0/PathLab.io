@@ -21,7 +21,7 @@ export default function Header() {
   }, []);
 
   // Handle Input Changes
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -29,7 +29,7 @@ export default function Header() {
   };
 
   // Handle Form Submission
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const emailTo = "dehupathology897@gmail.com";
