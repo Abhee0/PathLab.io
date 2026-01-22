@@ -1,7 +1,6 @@
 import { MessageCircle, X, Calendar, User, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import dehuLogo from '../../images/dehologo1.png';
-import labLogo from '../../images/lablogo4.png';
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
