@@ -15,8 +15,8 @@ export default function Header() {
   // Get current time on mount
   useEffect(() => {
     const now = new Date();
-    const timeString = now.toLocaleTimeString('en-IN', { 
-      hour: '2-digit', 
+    const timeString = now.toLocaleTimeString('en-IN', {
+      hour: '2-digit',
       minute: '2-digit',
       second: '2-digit'
     });
@@ -70,7 +70,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-full gap-2 sm:gap-3">
             {/* Logos */}
             <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
                   src={dehuLogo}
                   alt="Dehu Pathology Lab Logo"
@@ -185,31 +185,46 @@ export default function Header() {
                     className="w-full pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-xs sm:text-sm appearance-none"
                   >
                     <option value="">Select a time slot</option>
-                    <option value="9:00 AM">7:00 AM</option>
-                    <option value="9:00 AM">7:30 AM</option>
-                    <option value="9:00 AM">8:00 AM</option>
-                    <option value="9:00 AM">8:30 AM</option>
-                    <option value="9:00 AM">9:00 AM</option>
-                    <option value="9:30 AM">9:30 AM</option>
-                    <option value="10:00 AM">10:00 AM</option>
-                    <option value="10:30 AM">10:30 AM</option>
-                    <option value="11:00 AM">11:00 AM</option>
-                    <option value="11:30 AM">11:30 AM</option>
-                    <option value="2:00 PM">2:00 PM</option>
-                    <option value="2:30 PM">2:30 PM</option>
-                    <option value="3:00 PM">3:00 PM</option>
-                    <option value="3:30 PM">3:30 PM</option>
-                    <option value="4:00 PM">4:00 PM</option>
-                    <option value="4:30 PM">4:30 PM</option>
-                    <option value="5:00 PM">5:00 PM</option>
-                    <option value="5:30 PM">5:30 PM</option>
-                    <option value="6:00 PM">6:00 PM</option>
-                    <option value="6:30 PM">6:30 PM</option>
-                    <option value="7:00 PM">7:00 PM</option>
-                    <option value="7:30 PM">7:30 PM</option>
-                    <option value="8:00 PM">8:00 PM</option>
-                    <option value="8:30 PM">8:30 PM</option>
-                    <option value="9:00 PM">9:00 PM</option>
+                    {(() => {
+                      const slots = [];
+                      const startHour = 7;
+                      const endHour = 21; // 9 PM
+                      const today = new Date();
+                      const isToday = formData.preferredDate === today.toISOString().split('T')[0];
+                      const currentHour = today.getHours();
+                      const currentMinute = today.getMinutes();
+
+                      for (let hour = startHour; hour <= endHour; hour++) {
+                        for (let minute = 0; minute < 60; minute += 30) {
+                          // Skip if it's 9:30 PM (since we stop at 9:00 PM)
+                          if (hour === endHour && minute > 0) continue;
+
+                          // Filter past times if date is today
+                          if (isToday) {
+                            if (hour < currentHour || (hour === currentHour && minute <= currentMinute)) {
+                              continue;
+                            }
+                          }
+
+                          const ampm = hour >= 12 ? 'PM' : 'AM';
+                          const displayHour = hour % 12 || 12;
+                          const displayMinute = minute === 0 ? '00' : minute;
+                          const timeString = `${displayHour}:${displayMinute} ${ampm}`;
+
+                          slots.push(
+                            <option key={timeString} value={timeString}>
+                              {timeString}
+                            </option>
+                          );
+                        }
+                      }
+
+                      if (isToday && slots.length === 0) {
+                        return <option disabled>No slots available for today</option>
+                      }
+
+                      return slots;
+                    })()}
                   </select>
                 </div>
               </div>
