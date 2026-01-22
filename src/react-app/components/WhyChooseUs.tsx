@@ -98,9 +98,14 @@ export default function WhyChooseUs() {
                 <CheckCircle className="w-5 h-5" />
                 <span>Best Value for Routine Checkups</span>
               </div>
-              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg">
+              <a
+                href="https://wa.me/919325251932?text=Hello%2C%20I%20am%20interested%20in%20booking%20the%20Basic%20Health%20Package"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg"
+              >
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
 
@@ -122,9 +127,14 @@ export default function WhyChooseUs() {
                 <CheckCircle className="w-5 h-5" />
                 <span>Comprehensive Full Body Checkup</span>
               </div>
-              <button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg">
+              <a
+                href="https://wa.me/919325251932?text=Hello%2C%20I%20am%20interested%20in%20booking%20the%20Advanced%20Health%20Package"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 rounded-xl transition-all shadow-md hover:shadow-lg"
+              >
                 Book Now
-              </button>
+              </a>
             </div>
           </div>
         </div>

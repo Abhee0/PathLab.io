@@ -5,11 +5,23 @@ import dehuLogo from '../../images/dehologo1.png';
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentTime, setCurrentTime] = useState('');
   const [formData, setFormData] = useState({
     userName: '',
     preferredDate: '',
     preferredTime: ''
   });
+
+  // Get current time on mount
+  useEffect(() => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-IN', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      second: '2-digit'
+    });
+    setCurrentTime(timeString);
+  }, []);
 
   // Handle Scroll Effect
   useEffect(() => {
@@ -53,12 +65,12 @@ export default function Header() {
   return (
     <>
       {/* --- Main Header --- */}
-      <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'}`}>
-        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 md:py-4">
-          <div className="flex items-center justify-between gap-2 sm:gap-3">
+      <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 h-16 sm:h-20 md:h-20 ${isSticky ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'}`}>
+        <div className="container mx-auto px-3 sm:px-4 h-full">
+          <div className="flex items-center justify-between h-full gap-2 sm:gap-3">
             {/* Logos */}
             <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-18 lg:h-18 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
                   src={dehuLogo}
                   alt="Dehu Pathology Lab Logo"
@@ -66,7 +78,7 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center min-w-0">
-                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-red-600 leading-tight whitespace-nowrap sm:whitespace-normal" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
+                <p className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl font-bold text-red-600 leading-tight whitespace-nowrap sm:whitespace-normal" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
                   देहू पॅथॉलॉजी लॅबोरेटरी
                 </p>
               </div>
@@ -75,12 +87,27 @@ export default function Header() {
             {/* Book Test Button (Triggers Modal) */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-green-500 hover:bg-green-600 text-white px-2.5 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0"
+              className="bg-green-500 hover:bg-green-600 text-white px-3 sm:px-8 md:px-9 py-2 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-10 sm:min-h-11 md:min-h-11"
             >
               <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5" />
               <span className="hidden sm:inline font-medium text-xs sm:text-sm md:text-base">Book Test</span>
               <span className="sm:hidden font-medium text-xs">Book</span>
             </button>
+
+            {/* WhatsApp Button */}
+            <a
+              href={`https://wa.me/919325251932?text=${encodeURIComponent(
+                ` Home Collection – Test Booking\n\nHello!\nI want to book a Home Collection lab test \n\n Patient Name:\n Mobile No:\n Date:\n Time: ${currentTime}`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-600 hover:bg-green-700 text-white px-2.5 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-10 sm:min-h-11 md:min-h-11"
+              title="Chat on WhatsApp"
+            >
+              <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5" />
+              <span className="hidden sm:inline font-medium text-xs sm:text-sm md:text-base">WhatsApp</span>
+              <span className="sm:hidden font-medium text-xs">Chat</span>
+            </a>
           </div>
         </div>
       </header>
@@ -158,6 +185,10 @@ export default function Header() {
                     className="w-full pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-xs sm:text-sm appearance-none"
                   >
                     <option value="">Select a time slot</option>
+                    <option value="9:00 AM">7:00 AM</option>
+                    <option value="9:00 AM">7:30 AM</option>
+                    <option value="9:00 AM">8:00 AM</option>
+                    <option value="9:00 AM">8:30 AM</option>
                     <option value="9:00 AM">9:00 AM</option>
                     <option value="9:30 AM">9:30 AM</option>
                     <option value="10:00 AM">10:00 AM</option>
@@ -170,6 +201,15 @@ export default function Header() {
                     <option value="3:30 PM">3:30 PM</option>
                     <option value="4:00 PM">4:00 PM</option>
                     <option value="4:30 PM">4:30 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="5:30 PM">5:30 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="6:30 PM">6:30 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="7:30 PM">7:30 PM</option>
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="8:30 PM">8:30 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
                   </select>
                 </div>
               </div>
