@@ -51,7 +51,7 @@ export default function OfferPopup() {
           </div>
           
           <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Special Offer!</h3>
-          <p className="text-gray-600 mb-6 text-sm md:text-lg">\n            Contact us on WhatsApp to know today's test discounts.\n          </p>
+          <p className="text-gray-600 mb-6 text-sm md:text-lg">Contact us on WhatsApp to know today's test discounts.</p>
 
           <a
             href={whatsappLink}
@@ -60,7 +60,7 @@ export default function OfferPopup() {
             onClick={() => setIsVisible(false)}
             className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-8 py-2.5 md:py-4 rounded-full inline-flex items-center gap-2 md:gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105 font-semibold text-sm md:text-base"
           >
-            <MessageCircle className="w-4 md:w-5 h-4 md:h-5" />\n            <span>Get Offer Details</span>\n          </a>
+            <MessageCircle className="w-4 md:w-5 h-4 md:h-5" /><span>Get Offer Details</span> </a>
         </div>
       </div>
     </div>
