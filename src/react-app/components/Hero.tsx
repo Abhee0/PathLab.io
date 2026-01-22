@@ -14,10 +14,10 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Text Content */}
           <div className="text-center md:text-left">
-            <h2 className="text-6xl md:text-7xl font-bold text-gray-800 mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
               Trusted Pathology & Diagnostic Services
             </h2>
-            <p className="text-xl md:text-2xl text-gray-600 mb-10">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-10">
               Accurate and timely reporting for routine and special pathology tests
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -25,19 +25,19 @@ export default function Hero() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-green-500 hover:bg-green-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full flex items-center justify-center gap-2 sm:gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <MessageCircle className="w-6 h-6" />
-                <span className="font-semibold text-lg">Book on WhatsApp</span>
+                <MessageCircle className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6" />
+                <span className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">Book on WhatsApp</span>
               </a>
               <a 
                 href={emailLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 rounded-full flex items-center justify-center gap-2 sm:gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
-                <Mail className="w-6 h-6" />
-                <span className="font-semibold text-lg">Book via Email</span>
+                <Mail className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6" />
+                <span className="font-semibold text-xs sm:text-sm md:text-base lg:text-lg">Book via Email</span>
               </a>
             </div>
           </div>

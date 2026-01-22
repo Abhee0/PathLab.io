@@ -22,9 +22,9 @@ export default function Reviews() {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Patient Reviews</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">Patient Reviews</h2>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
             What our patients say about us
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function Reviews() {
                   <User className="w-8 h-8 text-blue-600" />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-800 text-lg">{review.name}</p>
+                  <p className="font-bold text-gray-800 text-sm md:text-lg">{review.name}</p>
                   <div className="flex gap-1 mt-1">
                     {[...Array(5)].map((_, i) => (
                       <Star 

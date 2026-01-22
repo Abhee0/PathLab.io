@@ -9,9 +9,9 @@ export default function BookingSection() {
   return (
     <section id="booking" className="py-20 bg-gradient-to-br from-blue-50 to-teal-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Book Your Appointment</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-2 md:mb-4">Book Your Appointment</h2>
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
             Choose your preferred booking method - quick WhatsApp booking or detailed email form
           </p>
         </div>
@@ -23,9 +23,9 @@ export default function BookingSection() {
               <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
                 <MessageCircle className="w-6 h-6 text-green-600" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800">WhatsApp Booking</h3>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">WhatsApp Booking</h3>
             </div>
-            <p className="text-gray-600 mb-6">
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-6">
               Quick and easy booking through WhatsApp. Get instant confirmation and communicate directly with our staff.
             </p>
             <a 

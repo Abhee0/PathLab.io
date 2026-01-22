@@ -32,17 +32,17 @@ export default function OfferPopup() {
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300">
-      <div className="bg-white rounded-2xl max-w-md w-full p-8 relative shadow-2xl animate-in zoom-in-50 duration-500">
+      <div className="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 relative shadow-2xl animate-in zoom-in-50 duration-500 mx-4">
         <button
           onClick={() => setIsVisible(false)}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          className="absolute top-3 md:top-4 right-3 md:right-4 text-gray-400 hover:text-gray-600 transition-colors"
           aria-label="Close"
         >
-          <X className="w-6 h-6" />
+          <X className="w-5 md:w-6 h-5 md:h-6" />
         </button>
 
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-6 rounded-2xl overflow-hidden shadow-lg">
+          <div className="w-16 md:w-24 h-16 md:h-24 mx-auto mb-4 md:mb-6 rounded-2xl overflow-hidden shadow-lg">
             <img 
               src="https://019be015-a079-7fd3-ab74-b37b99e843e8.mochausercontent.com/discount-icon.png"
               alt="Special Offer"
@@ -50,21 +50,17 @@ export default function OfferPopup() {
             />
           </div>
           
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">Special Offer!</h3>
-          <p className="text-gray-600 mb-6 text-lg">
-            Contact us on WhatsApp to know today's test discounts.
-          </p>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Special Offer!</h3>
+          <p className="text-gray-600 mb-6 text-sm md:text-lg">\n            Contact us on WhatsApp to know today's test discounts.\n          </p>
 
           <a
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsVisible(false)}
-            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full inline-flex items-center gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105 font-semibold"
+            className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-8 py-2.5 md:py-4 rounded-full inline-flex items-center gap-2 md:gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105 font-semibold text-sm md:text-base"
           >
-            <MessageCircle className="w-5 h-5" />
-            <span>Get Offer Details</span>
-          </a>
+            <MessageCircle className="w-4 md:w-5 h-4 md:h-5" />\n            <span>Get Offer Details</span>\n          </a>
         </div>
       </div>
     </div>

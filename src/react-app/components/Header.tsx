@@ -54,19 +54,19 @@ export default function Header() {
     <>
       {/* --- Main Header --- */}
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isSticky ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'}`}>
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
+        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 md:py-4">
+          <div className="flex items-center justify-between gap-2 sm:gap-3">
             {/* Logos */}
-            <div className="flex items-center gap-3">
-              <div className="w-19 h-16 rounded-lg flex items-center justify-center overflow-hidden">
+            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
                   src={dehuLogo}
                   alt="Dehu Pathology Lab Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <div className="flex flex-col items-start justify-center">
-                <p className="text-red-600 font-bold text-sm md:text-lg" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif", fontSize: '2.8rem' }}>
+              <div className="flex flex-col items-start justify-center min-w-0">
+                <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-2xl font-bold text-red-600 leading-tight whitespace-nowrap sm:whitespace-normal" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
                   देहू पॅथॉलॉजी लॅबोरेटरी
                 </p>
               </div>
@@ -75,11 +75,11 @@ export default function Header() {
             {/* Book Test Button (Triggers Modal) */}
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-6 py-2.5 md:py-3 rounded-full flex items-center gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer"
+              className="bg-green-500 hover:bg-green-600 text-white px-2.5 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0"
             >
-              <MessageCircle className="w-5 h-5" />
-              <span className="hidden md:inline font-medium">Book Test</span>
-              <span className="md:hidden font-medium">Book</span>
+              <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5" />
+              <span className="hidden sm:inline font-medium text-xs sm:text-sm md:text-base">Book Test</span>
+              <span className="sm:hidden font-medium text-xs">Book</span>
             </button>
           </div>
         </div>
@@ -87,25 +87,25 @@ export default function Header() {
 
       {/* --- Popup Modal --- */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 relative animate-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-3 sm:px-4 py-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
+          <div className="bg-white rounded-xl shadow-2xl w-full max-w-sm sm:max-w-md p-4 sm:p-6 relative animate-in zoom-in-95 duration-200">
 
             {/* Close Button */}
             <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute right-4 top-4 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all"
+              className="absolute right-3 sm:right-4 top-3 sm:top-4 p-1 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-full transition-all"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 sm:w-5 h-4 sm:h-5" />
             </button>
 
             {/* Modal Header */}
-            <h3 className="text-xl font-bold text-gray-800 mb-1">Book an Appointment</h3>
-            <p className="text-gray-500 text-sm mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-1">Book an Appointment</h3>
+            <p className="text-gray-500 text-xs sm:text-sm mb-4 sm:mb-6">
               Enter your details below to schedule a test.
             </p>
 
             {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
 
               {/* Name Input */}
               <div>
@@ -113,7 +113,7 @@ export default function Header() {
                   Patient Name
                 </label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <User className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 sm:w-4 h-3.5 sm:h-4 text-gray-400" />
                   <input
                     type="text"
                     name="userName"
@@ -121,25 +121,25 @@ export default function Header() {
                     placeholder="Enter your full name"
                     value={formData.userName}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
+                    className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-xs sm:text-sm"
                   />
                 </div>
               </div>
 
-              {/* Time Input */}
+              {/* Date Input */}
               <div>
                 <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5">
                   Preferred Date
                 </label>
                 <div className="relative">
-                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 sm:w-4 h-3.5 sm:h-4 text-gray-400" />
                   <input
                     type="date"
                     name="preferredDate"
                     required
                     value={formData.preferredDate}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm"
+                    className="w-full pl-9 sm:pl-10 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-xs sm:text-sm"
                   />
                 </div>
               </div>
@@ -155,7 +155,7 @@ export default function Header() {
                     required
                     value={formData.preferredTime}
                     onChange={handleChange}
-                    className="w-full pl-4 pr-4 py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-sm appearance-none"
+                    className="w-full pl-3 sm:pl-4 pr-3 sm:pr-4 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 rounded-lg focus:bg-white focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all text-xs sm:text-sm appearance-none"
                   >
                     <option value="">Select a time slot</option>
                     <option value="9:00 AM">9:00 AM</option>
@@ -181,9 +181,9 @@ export default function Header() {
                 </label>
                 <a
                   href="tel:9325251932"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 sm:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm"
                 >
-                  <Phone className="w-4 h-4" />
+                  <Phone className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                   <span>9325251932</span>
                 </a>
               </div>
@@ -191,9 +191,9 @@ export default function Header() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 mt-2"
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 sm:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-1.5 sm:gap-2 mt-2 text-xs sm:text-sm"
               >
-                <MessageCircle className="w-4 h-4" />
+                <MessageCircle className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
                 <span>Open in Gmail</span>
               </button>
             </form>

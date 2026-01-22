@@ -16,10 +16,10 @@ export default function TestCard({ icon, name, description }: TestCardProps) {
           {icon}
         </div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">{name}</h3>
+          <h3 className="text-sm md:text-base lg:text-lg font-semibold text-gray-800 group-hover:text-blue-600 transition-colors">{name}</h3>
         </div>
       </div>
-      <p className="text-gray-600 text-sm mb-4 flex-1">{description}</p>
+      <p className="text-gray-600 text-xs md:text-sm mb-4 flex-1">{description}</p>
       <a
         href={whatsappLink}
         target="_blank"
