@@ -14,7 +14,7 @@ export default function Contact() {
           </p>
         </div>
 
-        
+
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Information */}
@@ -62,7 +62,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <a 
+            <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -76,7 +76,7 @@ export default function Contact() {
           {/* Google Maps */}
           <div className="rounded-xl overflow-hidden shadow-lg h-[400px] md:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.5!2d73.7!3d18.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQyJzAwLjAiTiA3M8KwNDInMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://maps.google.com/maps?q=18.7196862,73.7667686&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
