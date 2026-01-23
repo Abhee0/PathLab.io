@@ -4,18 +4,7 @@ import dehuLogo from '../../images/dehologo1.png'; // Removed in favor of public
 
 export default function Header() {
   const [isSticky, setIsSticky] = useState(false);
-  const [currentTime, setCurrentTime] = useState('');
 
-  // Get current time on mount
-  useEffect(() => {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString('en-IN', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
-    });
-    setCurrentTime(timeString);
-  }, []);
 
   // Handle Scroll Effect
   useEffect(() => {
@@ -63,7 +52,7 @@ export default function Header() {
             {/* WhatsApp Button */}
             <a
               href={`https://wa.me/919325251932?text=${encodeURIComponent(
-                ` Home Collection – Test Booking\n\nHello!\nI want to book a Home Collection lab test \n\n Patient Name:\n Mobile No:\n Date:\n Time: ${currentTime}`
+                `Home Visit Request\n\nHello,\nI would like to book a home visit for tests.\nPlease contact me.\n\nThank you.\nDEHU PATHOLOGY LABORATORY`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
