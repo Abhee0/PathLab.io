@@ -1,7 +1,9 @@
 import { MessageCircle, Mail } from 'lucide-react';
 
 export default function BookingSection() {
-  const whatsappLink = "https://wa.me/919325251932?text=Hello,%20I%20want%20to%20book%20a%20pathology%20test.%20Name:%20___%20Test:%20___%20Preferred%20Date:%20___";
+  const whatsappLink = `https://wa.me/919325251932?text=${encodeURIComponent(
+    `Hello \nI would like to book a home visit for tests.\nPlease contact me.\n\nThank you.\n*DEHU PATHOLOGY LABORATORY*`
+  )}`;
   const emailSubject = "Pathology Test Booking Request";
   const emailBody = "Hello,%0A%0AI want to book a pathology test.%0A%0AName: ___%0APhone Number: ___%0AEmail: ___%0ATest Required: ___%0APreferred Date: ___%0A%0AThank you.";
   const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=dehupathology897@gmail.com&su=${emailSubject}&body=${emailBody}`;
@@ -28,7 +30,7 @@ export default function BookingSection() {
             <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-6">
               Quick and easy booking through WhatsApp. Get instant confirmation and communicate directly with our staff.
             </p>
-            <a 
+            <a
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -42,7 +44,7 @@ export default function BookingSection() {
           {/* Center Image */}
           <div className="hidden md:block">
             <div className="rounded-2xl overflow-hidden shadow-xl">
-              <img 
+              <img
                 src="https://019be015-a079-7fd3-ab74-b37b99e843e8.mochausercontent.com/booking-consultation.png"
                 alt="Healthcare consultation"
                 className="w-full h-auto object-cover"
@@ -61,7 +63,7 @@ export default function BookingSection() {
             <p className="text-gray-600 mb-6">
               Prefer email? Send us your booking details and we'll get back to you with confirmation.
             </p>
-            <a 
+            <a
               href={emailLink}
               target="_blank"
               rel="noopener noreferrer"
