@@ -1,6 +1,7 @@
 import { Users, Sparkles, Clock, IndianRupee, ShieldCheck, CheckCircle } from 'lucide-react';
 import pack1 from '../../images/pack1.png';
 import pack2 from '../../images/pack2.png';
+import lab2 from '../../images/lab2.png';
 
 export default function WhyChooseUs() {
   const features = [
@@ -14,7 +15,7 @@ export default function WhyChooseUs() {
       icon: <Sparkles className="w-8 h-8 text-teal-600" />,
       title: "Clean and Hygienic Lab",
       description: "Maintaining highest standards of cleanliness and safety",
-      image: "https://019be015-a079-7fd3-ab74-b37b99e843e8.mochausercontent.com/clean-lab-interior.png"
+      image: lab2
     },
     {
       icon: <Clock className="w-8 h-8 text-purple-600" />,
@@ -50,11 +51,11 @@ export default function WhyChooseUs() {
           {features.map((feature, index) => (
             <div key={index} className="group">
               <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-                <div className="h-48 overflow-hidden">
+                <div className="h-64 overflow-hidden bg-white">
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6 text-center">

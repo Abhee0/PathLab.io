@@ -32,7 +32,10 @@ export default function Header() {
               </div>
               <div className="flex flex-col items-start justify-center min-w-0">
                 <p className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-red-600 leading-tight whitespace-nowrap sm:whitespace-normal" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
-                  देहू पॅथॉलॉजी लॅबोरेटरी
+                  Dehu Pathology Laboratory
+                </p>
+                <p className="text-[10px] sm:text-xs md:text-sm font-medium text-green-600 -mt-0.5 sm:mt-0">
+                  Accuracy | Precision | Excellence
                 </p>
               </div>
             </div>
