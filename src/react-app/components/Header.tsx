@@ -31,7 +31,7 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center min-w-0">
-                <p className="text-[11px] xs:text-xs sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-red-600 leading-tight" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
+                <p className="text-[11px] xs:text-xs sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-red-600 leading-tight tracking-tight">
                   Dehu Pathology Laboratory
                 </p>
                 <p className="text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-medium text-green-600 sm:mt-0">
