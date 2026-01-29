@@ -23,7 +23,7 @@ export default function Header() {
           <div className="flex items-center justify-between h-full gap-2 sm:gap-3">
             {/* Logos */}
             <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
+              <div className="w-10 h-10 xs:w-12 xs:h-12 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 rounded-lg flex items-center justify-center overflow-hidden flex-shrink-0">
                 <img
                   src={dehuLogo}
                   alt="Dehu Pathology Lab Logo"
@@ -31,10 +31,10 @@ export default function Header() {
                 />
               </div>
               <div className="flex flex-col items-start justify-center min-w-0">
-                <p className="text-sm sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-red-600 leading-tight whitespace-nowrap sm:whitespace-normal" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
+                <p className="text-[11px] xs:text-xs sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-red-600 leading-tight" style={{ fontFamily: "'Noto Sans Devanagari', 'Shree Lipi', sans-serif" }}>
                   Dehu Pathology Laboratory
                 </p>
-                <p className="text-[10px] sm:text-xs md:text-sm font-medium text-green-600 -mt-0.5 sm:mt-0">
+                <p className="text-[9px] xs:text-[10px] sm:text-xs md:text-sm font-medium text-green-600 sm:mt-0">
                   Accuracy | Precision | Excellence
                 </p>
               </div>
@@ -45,11 +45,11 @@ export default function Header() {
               href="https://docs.google.com/forms/d/e/1FAIpQLSeI7q3N4FLtAQnlutZFLuTcrY_jEfdP_cxsfFA5qiUBCMOCew/viewform?pli=1"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-500 hover:bg-green-600 text-white px-3 sm:px-8 md:px-9 py-2 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-10 sm:min-h-11 md:min-h-11"
+              className="bg-green-500 hover:bg-green-600 text-white px-2 sm:px-8 md:px-9 py-1.5 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-8 sm:min-h-11 md:min-h-11"
             >
-              <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5" />
+              <MessageCircle className="w-3.5 sm:w-5 h-3.5 sm:h-5" />
               <span className="hidden sm:inline font-medium text-xs sm:text-sm md:text-base">Book Test</span>
-              <span className="sm:hidden font-medium text-xs">Book</span>
+              <span className="sm:hidden font-medium text-[10px]">Book</span>
             </a>
 
             {/* WhatsApp Button */}
@@ -59,12 +59,12 @@ export default function Header() {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-green-600 hover:bg-green-700 text-white px-2.5 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1.5 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-10 sm:min-h-11 md:min-h-11"
+              className="bg-green-600 hover:bg-green-700 text-white px-2 sm:px-4 md:px-6 py-1.5 sm:py-2.5 md:py-2.5 rounded-full flex items-center gap-1 sm:gap-2 transition-colors shadow-lg hover:shadow-xl cursor-pointer flex-shrink-0 min-h-8 sm:min-h-11 md:min-h-11"
               title="Chat on WhatsApp"
             >
-              <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5" />
+              <MessageCircle className="w-3.5 sm:w-5 h-3.5 sm:h-5" />
               <span className="hidden sm:inline font-medium text-xs sm:text-sm md:text-base">WhatsApp</span>
-              <span className="sm:hidden font-medium text-xs">Chat</span>
+              <span className="sm:hidden font-medium text-[10px]">Chat</span>
             </a>
           </div>
         </div>
