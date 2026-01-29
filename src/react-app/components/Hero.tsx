@@ -16,9 +16,9 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Text Content */}
           <div className="text-center md:text-left">
-            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 md:mb-6">
               Trusted Pathology & Diagnostic Services
-            </h2>
+            </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 mb-6 md:mb-10">
               Accurate and timely reporting for routine and special pathology tests
             </p>

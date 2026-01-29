@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dehupathology.com/sitemap.xml
