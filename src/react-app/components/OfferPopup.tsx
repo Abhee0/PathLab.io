@@ -1,4 +1,4 @@
-import { X, MessageCircle } from 'lucide-react';
+import { X, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 export default function OfferPopup() {
@@ -28,7 +28,7 @@ export default function OfferPopup() {
 
   if (!isVisible) return null;
 
-  const whatsappLink = "https://wa.me/919325251932?text=Hello,%20I%20want%20to%20know%20about%20today's%20test%20discounts";
+
 
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-300">
@@ -43,24 +43,32 @@ export default function OfferPopup() {
 
         <div className="text-center">
           <div className="w-16 md:w-24 h-16 md:h-24 mx-auto mb-4 md:mb-6 rounded-2xl overflow-hidden shadow-lg">
-            <img 
+            <img
               src="https://019be015-a079-7fd3-ab74-b37b99e843e8.mochausercontent.com/discount-icon.png"
               alt="Special Offer"
               className="w-full h-full object-cover"
             />
           </div>
-          
-          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Special Offer!</h3>
-          <p className="text-gray-600 mb-6 text-sm md:text-lg">Contact us on WhatsApp to know today's test discounts.</p>
 
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setIsVisible(false)}
-            className="bg-green-500 hover:bg-green-600 text-white px-4 md:px-8 py-2.5 md:py-4 rounded-full inline-flex items-center gap-2 md:gap-3 transition-all shadow-lg hover:shadow-xl hover:scale-105 font-semibold text-sm md:text-base"
-          >
-            <MessageCircle className="w-4 md:w-5 h-4 md:h-5" /><span>Get Offer Details</span> </a>
+          <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3 md:mb-4">Special Offer!</h3>
+          <p className="text-gray-600 mb-6 text-sm md:text-lg">Call our health advisor to know today's offer.</p>
+
+          <div className="flex items-center justify-center">
+            <div className="relative flex-shrink-0">
+              {/* Pulse rings */}
+              <span className="absolute inset-0 rounded-full bg-[#0A84FF]/40 animate-ping"></span>
+              <span className="absolute inset-0 rounded-full bg-[#0A84FF]/30 animate-ping delay-1000"></span>
+
+              {/* Main button */}
+              <a
+                href="tel:9325251932"
+                className="relative flex items-center justify-center bg-[#0A84FF] hover:bg-[#007AFF] text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 animate-vibrate"
+                aria-label="Call Us"
+              >
+                <Phone className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

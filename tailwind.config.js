@@ -14,14 +14,14 @@ export default {
       keyframes: {
         vibrate: {
           '0%, 100%': { transform: 'translate(0)' },
-          '20%': { transform: 'translate(-2px, 2px)' },
-          '40%': { transform: 'translate(-2px, -2px)' },
-          '60%': { transform: 'translate(2px, 2px)' },
-          '80%': { transform: 'translate(2px, -2px)' },
+          '20%': { transform: 'translate(-1px, 1px)' },
+          '40%': { transform: 'translate(-1px, -1px)' },
+          '60%': { transform: 'translate(1px, 1px)' },
+          '80%': { transform: 'translate(1px, -1px)' },
         },
       },
       animation: {
-        vibrate: 'vibrate 0.3s linear infinite',
+        vibrate: 'vibrate 0.6s linear infinite',
       },
     },
   },
